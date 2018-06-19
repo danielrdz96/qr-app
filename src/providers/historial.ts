@@ -6,7 +6,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Contacts, Contact, ContactField, ContactName   } from '@ionic-native/contacts';
 
 
-
+import { EmailComposer } from '@ionic-native/email-composer';
 import { ModalController, Platform, ToastController } from "ionic-angular";
 import { MapaPage } from "../pages/mapa/mapa";
 
@@ -24,7 +24,8 @@ export class HistorialService {
                private modalCtrl: ModalController,
                private contacts: Contacts,
                private platform:Platform,
-               private toastCtrl:ToastController) { }
+               private toastCtrl:ToastController,
+               private emailComposer: EmailComposer) { }
 
 
   agregar_historial( texto:string ){
@@ -60,6 +61,20 @@ export class HistorialService {
         this.modalCtrl.create( MapaPage, { coords: scanData.info })
             .present();
 
+      break;
+
+      case "email":
+      
+        let correo = scanData.info.split(":");
+        let email = {
+          to: correo[1],
+          cc: correo[1],
+          bcc: ['john@doe.com', 'jane@doe.com'],
+          subject: 'Tarea',
+          body: 'Tarea terminada',
+          isHtml: true
+        };
+        this.emailComposer.open(email);
       break;
 
       case "contacto":

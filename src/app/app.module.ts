@@ -17,6 +17,7 @@ import { HistorialService } from "../providers/historial";
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Contacts } from '@ionic-native/contacts';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BarcodeScanner,
     InAppBrowser,
     Contacts,
+    EmailComposer,
     HistorialService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

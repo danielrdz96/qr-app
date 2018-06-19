@@ -28,14 +28,14 @@ export class HomePage {
 
     if( !this.platform.is('cordova')){
     
-     this._historialService.agregar_historial( "http://google.com");
-     this._historialService.agregar_historial( "geo:9.976133040865312,-84.00677479055173" );
+     //this._historialService.agregar_historial( "http://google.com");
+     //this._historialService.agregar_historial( "geo:9.976133040865312,-84.00677479055173" );
       
 
      
-       this._historialService.agregar_historial( `BEGIN:VCARD
+       //this._historialService.agregar_historial( `BEGIN:VCARD
 
-VERSION:2.1
+/*VERSION:2.1
 N:Kent;Clark
 FN:Clark Kent
 ORG:
@@ -43,10 +43,10 @@ TEL;HOME;VOICE:12345
 TEL;TYPE=cell:67890
 ADR;TYPE=work:;;;
 EMAIL:clark@superman.com
-END:VCARD` );
+END:VCARD` ); */
 
 
-this._historialService.agregar_historial( "MATMSG:TO:danielrodrigueztorres96@gmail.com;SUB:Hola;Body:Saludos;")
+this._historialService.agregar_historial( "email:danielrodrigueztorres96@gmail.com" );
 }
 
 this.barcodeScanner.scan().then(barcodeData => {
